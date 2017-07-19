@@ -1,0 +1,23 @@
+<h2>Input Fields</h2>
+<input placeholder='name' [(ngModel)]="newCharacter.name">
+<input placeholder='role' [(ngModel)]="newCharacter.role">
+<input placeholder='image_url' [(ngModel)]="newCharacter.image_url">
+<input placeholder='Health' [(ngModel)]="newCharacter.health">
+
+<button (click)="postCharacter()">Create</button>
+
+<h2>Edit Fields</h2>
+<input placeholder="name" [(ngModel)]="selectedCharacter.name">
+<input placeholder='role' [(ngModel)]="selectedCharacter.role">
+<input placeholder="image_url" [(ngModel)]="selectedCharacter.image_url">
+<input placeholder="Health" [(ngModel)]="selectedCharacter.health">
+
+<button (click)="patchCharacter(selectedCharacter)">Change</button>
+
+<ul>
+  <li *ngFor="let character of characters">
+    {{character.name}} {{character.role}} {{character.health}}
+    <button (click)='setCharacter(character)'>Edit</button>
+    <button (click)='deleteCharacter(character)'>Delete</button>
+  </li>
+</ul>
